@@ -18,4 +18,37 @@ print(res)
 
 # =============================================================================
 # problem 2
+# https://projecteuler.net/problem=2
+# =============================================================================
+# 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+def n_fibonacci(n):
+    '''get the number n of fibonacci'''
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return n_fibonacci(n-1) + n_fibonacci(n-2)
+
+count = 1
+n_fib = 1
+while n_fib < 4000001:
+    n_fib = n_fibonacci(count)
+    count +=1
+
+print(count-2) #第32个覅波那切数符合条件
+
+
+def sum_fobonacci(n):
+    '''get the sum of the even_valued term'''
+    sum_list = []
+    for i in range(1, n+1):
+        if n_fibonacci(i)%2 == 0:
+            sum_list.append(n_fibonacci(i))
+    return sum(sum_list), sum_list
+
+sum_fobonacci(32)
+
+# =============================================================================
+# problem 3
 # =============================================================================
