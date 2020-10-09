@@ -36,7 +36,7 @@ while n_fib < 4000001:
     n_fib = n_fibonacci(count)
     count +=1
 
-print(count-2) #第32个覅波那切数符合条件
+print("We need the %sth fibonacci"%(count-2)) #第32个覅波那切数符合条件
 
 
 def sum_fobonacci(n):
@@ -51,4 +51,40 @@ sum_fobonacci(32)
 
 # =============================================================================
 # problem 3
+# https://projecteuler.net/problem=3
 # =============================================================================
+a = 600851475143
+prime = 0
+for i in range(1,a-2):
+    # test only odd number
+    if i%2 != 0:
+        i = i+2
+        if a % i == 0:
+            prime = i
+            a = int(a/prime) #update a - run the for loop with new a-values
+            break
+    #skip even number
+    else:
+        continue
+    print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
